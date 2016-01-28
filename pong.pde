@@ -2,7 +2,7 @@ Ball b;
 Bar bar;
 
 void setup(){
-size (1000,800);
+size (700,700);
 noStroke();
 b = new Ball();
 bar = new Bar();
@@ -11,6 +11,10 @@ bar = new Bar();
 }
 
 void draw(){
+  noStroke();
+  background(#1F7B9B);
+  b.bounce();
+  b.display();
 
 
 
