@@ -1,6 +1,7 @@
 class Ball{
   
 PVector pos;
+PVector vel;
 float x;
 float y;
 float radius;
@@ -9,10 +10,9 @@ float yspeed;
 
 Ball(float x, float y, float r){
 
- pos = new PVector(x, y);
  radius = r;
- xspeed = 1;
- yspeed = 1;
+ pos = new PVector(width/3, height/3);
+ vel = new PVector(1,5);
   }
   
  Ball(){
@@ -21,14 +21,13 @@ Ball(float x, float y, float r){
  }
   
 void bounce(){
-pos.x += xspeed;
+pos.add(vel);
 if (pos.x - radius < 0 || pos.x + radius > width){
-xspeed *= (-1);
+vel.x *= (-1);
 }
 
-pos.y += yspeed;
 if (pos.y - radius < 0 || pos.y + radius > width){
-yspeed *= (-1);
+vel.y *= (-1);
 }
 
 }
