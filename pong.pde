@@ -30,6 +30,7 @@ void draw(){
   bar.move();
   bar.render();
   g.render();
+  g.direct();
   
   noStroke();
 
