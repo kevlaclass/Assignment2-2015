@@ -1,5 +1,7 @@
 class Bar{
   
+  float x;
+  float y;
   PVector pos;
   PVector len;
   
@@ -8,6 +10,8 @@ class Bar{
   
     pos = new PVector(0, height - (height/7));
     len = new PVector(rwidth, rheight);
+     x = 0;
+     y = height - (height/7);
     
   }
   
@@ -18,7 +22,7 @@ class Bar{
   
   void move(){
   
-  
+  pos.x = mouseX;
   
   }
   
@@ -29,6 +33,7 @@ class Bar{
     fill(#1F7B9B);
     //strokeWeight(4);
     rect(pos.x, pos.y, len.x, len.y, 6, 6, 6, 6);
+    //rect(x, y, len.x, len.y, 6, 6, 6, 6);
     noStroke();
   }
 

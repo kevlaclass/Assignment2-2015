@@ -24,6 +24,7 @@ void draw(){
   //b2.display();
   b.bounce();
   b.display();
+  bar.move();
   bar.render();
   noStroke();
 
