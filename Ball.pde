@@ -32,6 +32,7 @@ vel.x *= (-1);
 
 if (pos.y - radius/2 < 0 || pos.y + radius/2 > height){
 vel.y *= (-1);
+
 }
 
 }

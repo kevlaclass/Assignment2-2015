@@ -19,12 +19,13 @@ void draw(){
   background(#1F7B9B);
   
   b3.bounce();
-  b3.display();
+ // b3.display();
   b2.bounce();
-  b2.display();
+  //b2.display();
   b.bounce();
   b.display();
-
+  bar.render();
+  noStroke();
 
 
 }
