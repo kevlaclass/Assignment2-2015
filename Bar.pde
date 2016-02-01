@@ -22,7 +22,7 @@ class Bar{
   
   void move(){
   
-  pos.x = mouseX;
+  pos.x = mouseX - len.x /2;
   
   }
   
