@@ -6,8 +6,8 @@ class Bullets{
 Bullets(){
   
   forward = new PVector();
-  forward.x = sin(theta);
-  forward.y = -cos(theta);
+  forward.x = sin(g.theta);
+  forward.y = -cos(g.theta);
   speed = new PVector();
   
   
