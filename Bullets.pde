@@ -1,13 +1,16 @@
 class Bullets extends Guns{
   
 PVector loc;
+PVector forw;
+float speed;
 
 
 Bullets(){
  
   loc = new PVector();
-  loc.x = bar.pos.x + bar.len.x / 2;
-  loc.y = 
+  forw = new PVector();
+  speed = 2;
+  
  
   
   
@@ -19,7 +22,7 @@ Bullets(){
 
 void display(){
   
-    translate(,  );
+    translate(loc.x, loc.y );
      rotate(theta);
      fill(180,20,150);
      stroke(0);
@@ -29,6 +32,12 @@ void display(){
 }
 
 void move(){
+ 
+forw.mult(speed);
+forw.x = sin(g.theta);
+forw.y = -cos(g.theta);
+loc.x = bar.pos.x + bar.len.x / 2;
+loc.y = bar.pos.y + 15;
   
 }
 
