@@ -1,11 +1,11 @@
 class Guns{
-PVector pos;
+//PVector pos;
 float theta;
 
 
 
 Guns(){
-pos = new PVector();
+//pos = new PVector();
 theta = 0;
 
 
@@ -29,6 +29,7 @@ if (keyPressed){
 }
 
 void render(){
+  pushMatrix();
 translate(bar.pos.x + bar.len.x / 2, bar.pos.y + 15 );
 rotate(theta);
  fill(0,#1F7B9B);
@@ -38,6 +39,7 @@ line(0, 0,0, 0- 35);
 ellipse(0, 0, 15,15 );
 //line(bar.pos.x + bar.len.x / 2, bar.pos.y + 15,bar.pos.x + bar.len.x / 2 , bar.pos.y - 20);
 //ellipse(bar.pos.x + bar.len.x / 2, bar.pos.y + 15, 15,15 );
+popMatrix();
 
 
 

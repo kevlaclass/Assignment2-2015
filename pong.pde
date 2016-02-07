@@ -3,6 +3,7 @@ Ball b2;
 Ball b3;
 Bar bar;
 Guns g;
+Bullets amo;
 
 void setup(){
 size (700,700);
@@ -12,7 +13,7 @@ b2 = new Ball(100, 100, 80);
 b = new Ball();
 bar = new Bar();
 g = new Guns();
-
+amo = new Bullets();
 
 
 }
@@ -31,6 +32,8 @@ void draw(){
   bar.render();
   g.render();
   g.direct();
+  amo.move();
+  amo.display();
   
   noStroke();
 
