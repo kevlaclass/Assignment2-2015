@@ -16,7 +16,7 @@ void direct(){
 if (keyPressed){
   if (key == 'a')
   {
-    theta -= 0.1;
+    theta -= 0.08;
   }
   if (key == 'd')
   {

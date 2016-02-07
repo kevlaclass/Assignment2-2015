@@ -34,7 +34,6 @@ void draw(){
   g.direct();
   amo.move();
   amo.display();
-  
   noStroke();
 
 
