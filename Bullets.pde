@@ -5,11 +5,12 @@ PVector forw;
 float speed;
 
 
+
 Bullets(){
  
   loc = new PVector();
   forw = new PVector();
-  speed = 50;
+  speed = 2;
   
 }
 
@@ -24,11 +25,12 @@ println("g", g.theta);
 forw.x = sin(g.theta);
 forw.y = -cos(g.theta);
 
-loc.add(forw);
+println(forw.x, forw.y, "loc",loc.x, loc.y);
 
-//while(loc.x > 0 || loc.y > 0){
 
-//}
+while(loc.x > 0 || loc.y > 0){
+  loc.add(forw);
+}
   
 }
 
