@@ -11,6 +11,7 @@ Bullets(){
   forw = new PVector();
   speed = 2;
   
+  
  
   
   
@@ -36,8 +37,11 @@ void move(){
 forw.mult(speed);
 forw.x = sin(g.theta);
 forw.y = -cos(g.theta);
+
+while(loc.x > 0 || loc.y > 0){
 loc.x = bar.pos.x + bar.len.x / 2;
 loc.y = bar.pos.y + 15;
+}
   
 }
 
