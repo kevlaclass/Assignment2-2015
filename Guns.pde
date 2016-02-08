@@ -1,6 +1,7 @@
 class Guns{
 //PVector pos;
 float theta;
+int elapse = 10;
 
 
 
@@ -13,16 +14,15 @@ theta = 0;
 }
 
 void direct(){
-if (keyPressed){
-  if (key == 'a')
+  if (keys['A'])
   {
     theta -= 0.08;
   }
-  if (key == 'd')
+  if (keys['D'])
   {
     theta += 0.1;
   }
-  if (key == ' ')
+  if (keys[' '])
   {
     Bullets amo1 = new Bullets();
     amo1.loc.x = bar.pos.x + bar.len.x / 2;
@@ -34,7 +34,7 @@ if (keyPressed){
     bullet.add(amo1);
   }
 
-}
+
 
 
 }

@@ -6,6 +6,17 @@ Guns g;
 Bullets amo;
 
 ArrayList<Bullets> bullet = new ArrayList<Bullets>();
+boolean[] keys = new boolean[512];
+
+void keyPressed()
+{
+  keys[keyCode] = true;
+}
+
+void keyReleased()
+{
+  keys[keyCode] = false;
+}
 
 void setup(){
 size (700,700);
