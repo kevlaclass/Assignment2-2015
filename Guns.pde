@@ -22,6 +22,17 @@ if (keyPressed){
   {
     theta += 0.1;
   }
+  if (key == ' ')
+  {
+    Bullets amo1 = new Bullets();
+    amo1.loc.x = bar.pos.x + bar.len.x / 2;
+    amo1.loc.y = bar.pos.y + 15;
+    amo1.forw.x = sin(g.theta);
+    amo1.forw.y = -cos(g.theta);
+    amo1.forw.mult(amo1.speed);
+    amo1.loc.add(amo1.forw);
+    bullet.add(amo1);
+  }
 
 }
 

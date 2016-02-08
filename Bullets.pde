@@ -23,15 +23,16 @@ void move(){
 
     loc.x = bar.pos.x + bar.len.x / 2;
     loc.y = bar.pos.y + 15;
+    
 
   }
   //if (keyPressed)
 //{
 //  if (key == ' '){
   
-  
-forw.x = sin(g.theta);
-forw.y = -cos(g.theta);
+  forw.x = sin(g.theta);
+  forw.y = -cos(g.theta);
+
 
 forw.mult(speed);
 

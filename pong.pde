@@ -5,6 +5,8 @@ Bar bar;
 Guns g;
 Bullets amo;
 
+ArrayList<Bullets> bullet = new ArrayList<Bullets>();
+
 void setup(){
 size (700,700);
 noStroke();
@@ -15,11 +17,15 @@ bar = new Bar();
 g = new Guns();
 amo = new Bullets();
 
-
+for (int i = 0; i< 10; i++){
+  bullet.add(new Bullets());
+}
 
 }
 
-ArrayList<Bullets> bullet = new ArrayList<Bullets>();
+
+
+
 
 void draw(){
   noStroke();
@@ -35,15 +41,25 @@ void draw(){
   bar.render();
   g.render();
   g.direct();
-  if (keyPressed){
-    if (key == ' '){
-      amo.fire2 = false;
-    }
+  
+  for (int i = bullet.size()-1 ; i >= 0 ; i--){
+    
+    Bullets amo = bullet.get(i);
+    println("here");
+    amo.move();
+    amo.display();
+  
   }
-  if (amo.fire2 == false){
-  amo.move();
-  amo.display();
-  }
+  
+  //if (keyPressed){
+  //  if (key == ' '){
+  //    amo.fire2 = false;
+  //  }
+  //}
+  //if (amo.fire2 == false){
+  //amo.move();
+  //amo.display();
+  //}
 
   
   
