@@ -3,7 +3,8 @@ class Bullets extends Guns{
 PVector loc;
 PVector forw;
 float speed;
-
+boolean fire;
+boolean fire2;
 
 
 Bullets(){
@@ -11,29 +12,45 @@ Bullets(){
   loc = new PVector();
   forw = new PVector();
   speed = 10;
+  fire = false;
+  fire2 = true;
+  
   
 }
 
 void move(){
+  if(fire == false){
 
-println("g", g.theta);
+    loc.x = bar.pos.x + bar.len.x / 2;
+    loc.y = bar.pos.y + 15;
 
+  }
+  //if (keyPressed)
+//{
+//  if (key == ' '){
+  
+  
 forw.x = sin(g.theta);
 forw.y = -cos(g.theta);
 
 forw.mult(speed);
 
-println(forw.x, forw.y, "loc",loc.x, loc.y);
 
-loc.add(forw);
+  
+  loc.add(forw);
+  fire = true;
+  //}
+//}
+ 
+
+
  
 }
 
 
 void display(){
   
-    loc.x = bar.pos.x + bar.len.x / 2;
-    loc.y = bar.pos.y + 15;
+   
     pushMatrix();
     translate(loc.x, loc.y );
      fill(180,20,150);

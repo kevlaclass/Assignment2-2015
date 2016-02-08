@@ -16,7 +16,10 @@ g = new Guns();
 amo = new Bullets();
 
 
+
 }
+
+ArrayList<Bullets> bullet = new ArrayList<Bullets>();
 
 void draw(){
   noStroke();
@@ -32,8 +35,26 @@ void draw(){
   bar.render();
   g.render();
   g.direct();
+  if (keyPressed){
+    if (key == ' '){
+      amo.fire2 = false;
+    }
+  }
+  if (amo.fire2 == false){
   amo.move();
   amo.display();
+  }
+
+  
+  
+  
+  //for(int i = bullet.size() - 1 ; i >= 0   ;i --)
+  //{
+  //  Bullets amo = bullet.get(i);
+  //  amo.move();
+  //  amo.display();
+  //}
+  
   noStroke();
 
 
