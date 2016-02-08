@@ -14,6 +14,10 @@ theta = 0;
 }
 
 void direct(){
+  if (b.vel.y == (-2)){
+    elapse +=2;
+  println("hhhhhhhhhhhhhhhhhhhhhhh");
+  }
   if (keys['A'])
   {
     theta -= 0.08;
@@ -22,7 +26,7 @@ void direct(){
   {
     theta += 0.1;
   }
-  if (keys[' '])
+  if (keys[' ']  && elapse >12)
   {
     Bullets amo1 = new Bullets();
     amo1.loc.x = bar.pos.x + bar.len.x / 2;
@@ -32,6 +36,7 @@ void direct(){
     amo1.forw.mult(amo1.speed);
     amo1.loc.add(amo1.forw);
     bullet.add(amo1);
+    elapse  -= 10 ;
   }
 
 
