@@ -5,6 +5,7 @@ PVector forw;
 float speed;
 boolean fire;
 boolean fire2;
+float theta2;
 
 
 Bullets(){
@@ -23,6 +24,7 @@ void move(){
 
     loc.x = bar.pos.x + bar.len.x / 2;
     loc.y = bar.pos.y + 15;
+    theta2 = g.theta;
     
 
   }
@@ -30,8 +32,8 @@ void move(){
 //{
 //  if (key == ' '){
   
-  forw.x = sin(g.theta);
-  forw.y = -cos(g.theta);
+  forw.x = sin(theta2);
+  forw.y = -cos(theta2);
 
 
 forw.mult(speed);
