@@ -14,7 +14,7 @@ theta = 0;
 }
 
 void direct(){
-  if (b.vel.y == (-2)){
+  if (b.vel.y == (-2) || b.vel.x == (-1)){
     elapse +=2;
   println("hhhhhhhhhhhhhhhhhhhhhhh");
   }
@@ -36,7 +36,7 @@ void direct(){
     amo1.forw.mult(amo1.speed);
     amo1.loc.add(amo1.forw);
     bullet.add(amo1);
-    elapse  -= 10 ;
+    elapse  = 0 ;
   }
 
 
