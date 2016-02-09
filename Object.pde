@@ -28,35 +28,28 @@ Object(){
 
 void move(){
 
- //while (j == 0){
-   
- // j = (int)(random(-1, 1));
-  
- //}
- 
- //x += j;
  x += speedx;
    
-   //while (k == 0){
-   
- // k = (int)(random(-1, 1));
-  //}
-  //y += k;
+  
   
   
   if ((x + halfw) - radius/2 < 0 ||(x + halfw) + radius/2 > width){
    speedx *= (-1);
-////theta *= (-1);
 }
 
 y += speedy;
-//
+
 if ((y + halfw) - radius/2 < 0 || (y + halfw) + radius/2 > height){
     speedy *= (-1);
-////theta *= (-1);
 }
 
+
+if ((y + halfw )+ radius/2 > bar.pos.y && (x + halfw) > bar.pos.x && (x + halfw) < bar.pos.x + bar.len.x){
+  speedy *= (-1);
 }
+}
+
+
     
 
 
