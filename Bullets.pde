@@ -58,7 +58,8 @@ void display(){
     translate(loc.x, loc.y );
      fill(180,20,150);
      stroke(0);
-     ellipse(0, 0, 20,20 );
+     strokeWeight(0);
+     ellipse(0, 0, 10,10 );
      popMatrix();
 
 

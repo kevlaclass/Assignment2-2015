@@ -3,7 +3,12 @@ Ball b2;
 Ball b3;
 Bar bar;
 Guns g;
-Bullets amo;
+//Bullets amo;
+Object o;
+int lx = 0;
+int ly = 600;
+
+ArrayList<Object> object = new ArrayList <Object>();
 
 ArrayList<Bullets> bullet = new ArrayList<Bullets>();
 
@@ -27,14 +32,10 @@ b2 = new Ball(100, 100, 80);
 b = new Ball();
 bar = new Bar();
 g = new Guns();
-amo = new Bullets();
-
-for (int i = 0; i< 10; i++){
-  bullet.add(new Bullets());
-}
+//amo = new Bullets();
+o = new Object();
 
 }
-
 
 
 
@@ -42,6 +43,12 @@ for (int i = 0; i< 10; i++){
 void draw(){
   noStroke();
   background(#1F7B9B);
+  if (frameCount % 500 == 0){
+  Object amo2 = new Object();
+  object.add(amo2);
+  }
+  
+  
   
   b3.bounce();
  // b3.display();
@@ -53,29 +60,28 @@ void draw(){
   bar.render();
   g.render();
   g.direct();
+  //o.move();
+  //o.display();
+  
+  
+  for (int i = object.size()-1 ; i >= 0 ; i--){
+    
+    Object square = object.get(i);
+    square.move();
+    square.display();
+    
+    
+  
+  }
   
   for (int i = bullet.size()-1 ; i >= 0 ; i--){
     
     Bullets amo = bullet.get(i);
-    println("here");
     amo.move();
     amo.display();
   
   }
-  
-  //if (keyPressed){
-  //  if (key == ' '){
-  //    amo.fire2 = false;
-  //  }
-  //}
-  //if (amo.fire2 == false){
-  //amo.move();
-  //amo.display();
-  //}
-
-  
-  
-  
+ 
   //for(int i = bullet.size() - 1 ; i >= 0   ;i --)
   //{
   //  Bullets amo = bullet.get(i);
@@ -84,6 +90,9 @@ void draw(){
   //}
   
   noStroke();
+  strokeWeight(0);
+  stroke(255);
+  line(lx, ly, width, ly );
 
 
 }

@@ -14,9 +14,8 @@ theta = 0;
 }
 
 void direct(){
-  if (b.vel.y == (-2) || b.vel.x == (-1)){
+  if (b.vel.y == (-2) /*|| b.vel.x == (-1)*/){
     elapse +=2;
-  println("hhhhhhhhhhhhhhhhhhhhhhh");
   }
   if (keys['A'])
   {
@@ -25,8 +24,9 @@ void direct(){
   if (keys['D'])
   {
     theta += 0.1;
+    println(elapse);
   }
-  if (keys[' ']  && elapse >12)
+  if (keys['W']  &&   frameCount % 5 == 0)
   {
     Bullets amo1 = new Bullets();
     amo1.loc.x = bar.pos.x + bar.len.x / 2;
@@ -34,7 +34,9 @@ void direct(){
     amo1.forw.x = sin(g.theta);
     amo1.forw.y = -cos(g.theta);
     amo1.forw.mult(amo1.speed);
-    amo1.loc.add(amo1.forw);
+   // amo1.loc.add(amo1.forw);
+    //Object amo = new Object();
+    //object.add(amo);
     bullet.add(amo1);
     elapse  = 0 ;
   }
@@ -47,7 +49,6 @@ void direct(){
 void render(){
   pushMatrix();
     translate(bar.pos.x + bar.len.x / 2, bar.pos.y + 15 );
-    println(theta);
     rotate(theta);
      fill(0,#1F7B9B);
      fill(180);
