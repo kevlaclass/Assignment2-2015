@@ -81,18 +81,38 @@ void draw(){
     amo.display();
   
   }
- 
-  //for(int i = bullet.size() - 1 ; i >= 0   ;i --)
-  //{
-  //  Bullets amo = bullet.get(i);
-  //  amo.move();
-  //  amo.display();
-  //}
   
   noStroke();
   strokeWeight(0);
   stroke(255);
   line(lx, ly, width, ly );
 
+ checkCollisions();
 
+}
+
+public void checkCollisions()
+{
+ for(int i = bullet.size() - 1 ; i >= 0   ;i --)
+ {  
+     println("keep going");
+    Bullets go = bullet.get(i);
+    if (go instanceof Bullets)
+    {
+      for(int j = object.size() - 1 ; j >= 0   ;j --)
+      {
+        Bubble other = object.get(j);
+        if (other instanceof Bubble) // Check the type of a object
+        {
+          // Bounding circle collisions
+          if (go.loc.dist(other.pos) < go.halfw + other.halfw)
+          {
+            // Do some casting
+            //((Powerup) other).applyTo((Ship)go);
+            object.remove(other);
+          }
+        }
+      }
+    }
+ } 
 }

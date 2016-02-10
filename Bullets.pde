@@ -6,6 +6,8 @@ float speed;
 boolean fire;
 boolean fire2;
 float theta2;
+float rad;
+float halfw = rad * 0.5f;
 
 
 Bullets(){
@@ -15,6 +17,7 @@ Bullets(){
   speed = 10;
   fire = false;
   fire2 = true;
+  rad = 10;
   
   
 }

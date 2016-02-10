@@ -34,9 +34,6 @@ void direct(){
     amo1.forw.x = sin(g.theta);
     amo1.forw.y = -cos(g.theta);
     amo1.forw.mult(amo1.speed);
-   // amo1.loc.add(amo1.forw);
-    //Object amo = new Object();
-    //object.add(amo);
     bullet.add(amo1);
     elapse  = 0 ;
   }
