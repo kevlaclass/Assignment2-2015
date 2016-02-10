@@ -50,6 +50,10 @@ if ((y + halfw )+ radius/2 > bar.pos.y && (x + halfw) > bar.pos.x && (x + halfw)
   speedy *= (-1);
 }
 
+if ((y + halfw )+ radius/2 > bar.pos.y ){
+
+  gameOver = true;
+}
 pos = new PVector(x + halfw, y + halfw);
 }
 
