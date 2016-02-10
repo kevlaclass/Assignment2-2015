@@ -3,6 +3,8 @@ Ball b2;
 Ball b3;
 Bar bar;
 Guns g;
+
+int score = 0;
 //Bullets amo;
 Object o;
 int lx = 0;
@@ -87,11 +89,11 @@ void draw(){
   stroke(255);
   line(lx, ly, width, ly );
 
- checkCollisions();
+  Collisions();
 
 }
 
-public void checkCollisions()
+public void Collisions()
 {
  for(int i = bullet.size() - 1 ; i >= 0   ;i --)
  {  
@@ -104,13 +106,12 @@ public void checkCollisions()
         Bubble other = object.get(j);
         if (other instanceof Bubble) // Check the type of a object
         {
-          // Bounding circle collisions
+          //circle collisions
           if (go.loc.dist(other.pos) < go.halfw + other.halfw)
           {
-            // Do some casting
-            //((Powerup) other).applyTo((Ship)go);
+            score ++;
             object.remove(other);
-          }
+}
         }
       }
     }
