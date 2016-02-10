@@ -45,6 +45,11 @@ o = new Object();
 void draw(){
   noStroke();
   background(#1F7B9B);
+  strokeWeight(2);
+  textSize(15);
+    textAlign(LEFT);
+    text("score: " + score, 10, 10);
+    noStroke();
   if (frameCount % 500 == 0){
   Object amo2 = new Object();
   object.add(amo2);
