@@ -31,25 +31,18 @@ void move(){
     
 
   }
-  //if (keyPressed)
-//{
-//  if (key == ' '){
+ 
   
   forw.x = sin(theta2);
   forw.y = -cos(theta2);
 
 
-forw.mult(speed);
+  forw.mult(speed);
 
 
   
   loc.add(forw);
   fire = true;
-  //}
-//}
- 
-
-
  
 }
 
