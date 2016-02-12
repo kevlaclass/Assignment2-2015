@@ -1,3 +1,4 @@
+
   void mouseClicked()
 {
   if ((mouseX > left) && (mouseX < left + bWidth) && (mouseY > top) && (mouseY < top + bHeight)) 
@@ -5,6 +6,7 @@
     toggled = ! toggled;
   }  
 }
+boolean high = false;
 int bounce =0;
 int lives = 5;
 Ball b;
@@ -24,7 +26,7 @@ float ballRadius = ballSize / 2;
 boolean toggled;
 boolean gameOver = false;
 int time = 300;
-
+int highScore = 0;
 int score = 0;
 //Bullets amo;
 Object o;
@@ -48,7 +50,7 @@ void keyReleased()
 }
 
 void setup(){
-size (700,700);
+size (1200,700);
 noStroke();
 b3 = new Ball(60, 60, 60);
 b2 = new Ball(100, 100, 80);
@@ -70,7 +72,11 @@ o = new Object();
   ballY = 400;
   dirX = 1;
   dirY = 1;
-
+  String[] Scores = loadStrings("highscore.txt");
+  highScore = parseInt(Scores[0]);
+  
+  
+  
 }
 
 
@@ -136,6 +142,7 @@ void draw(){
   textAlign(LEFT);
     text("score: " + score, 25, 25);
     text("lives: " + lives, 25, 50);
+    text("HIGH SCORE "+ highScore, 25, 75);
     noStroke();
     
     
@@ -204,7 +211,18 @@ void draw(){
   textAlign(CENTER);
   text("GAME OVER", width/ 2, height/ 2);
   text("SCORE "+ score, width/2, (height/ 2)+ 100);
+  text("HIGH SCORE "+ highScore, width/2, (height/ 2)+ 200);
+  high = true;
   
+  }
+  
+  if (high ==true ){
+   println(highScore);
+  PrintWriter save = createWriter("data/highscore.txt");
+  save.println(highScore);
+  save.flush();
+  save.close();
+  high = false;
   }
 
 }
@@ -219,7 +237,7 @@ public void Collisions()
     {
       if (go.loc.x <= 10 || go.loc.x >= width - 10 || go.loc.y <= 10 || go.loc.y >= height -10 ){
         bullet.remove(go);
-        g.time2 += 1;
+        //g.time2 += 1;
       
       }
       for(int j = object.size() - 1 ; j >= 0   ;j --)
@@ -232,9 +250,15 @@ public void Collisions()
           if (go.loc.dist(other.pos) < 22)
           {
             score ++;
+            if(score > highScore){
+/////////////////////////////////////////////////////////////////////////////////////
+              highScore = score;
+            }
             if (time > 50){
             time -= 25;
-            g.time2 -= 50;
+            if (g.time2 > 0){
+            //g.time2 -= 5;
+            }
             
             }
             object.remove(other);
