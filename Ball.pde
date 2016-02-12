@@ -1,4 +1,4 @@
-  class Ball{
+ class Ball{
   
 PVector pos;
 PVector vel;
@@ -39,16 +39,21 @@ vel.y *= (-1);
 //theta *= (-1);
 }
 
-if (pos.y + radius/2 > bar.pos.y && pos.x > bar.pos.x && pos.x < bar.pos.x + bar.len.x ){
-vel.y *= (-1);
+if (pos.y + radius/2 >= bar.pos.y && (pos.y + radius/2) <= bar.pos.y + 5 && pos.x > bar.pos.x && pos.x < bar.pos.x + bar.len.x ){
+  if (vel.y > 0){
+  vel.y *= (-1);
+  bounce ++;
+  if (bounce == 10){
+    lives ++;
+    g.time2 -= 50;
+    bounce = 0;
+  
+  }
+  }
 //theta -= 0.1;;
 }
 
-if (pos.y - (radius/2) > ly)
-{
-  
-  //gameOver = true;
-}
+
 println("herrreee",(pos.y -(radius/2)));
 }
 
