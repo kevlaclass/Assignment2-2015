@@ -10,6 +10,11 @@ float yspeed;
 float halfw;
 float theta;
 
+Ball(){
+   
+   this(width/3, height/3, 20);
+ }
+ 
 Ball(float x, float y, float r){
 
  radius = r;
@@ -19,10 +24,7 @@ Ball(float x, float y, float r){
  theta += 0.1;
   }
   
- Ball(){
-   
-   this(width/3, height/3, 20);
- }
+ 
   
 void bounce(){
 theta += 0.1;
@@ -42,6 +44,12 @@ vel.y *= (-1);
 //theta -= 0.1;;
 }
 
+if (pos.y - (radius/2) > ly)
+{
+  
+  //gameOver = true;
+}
+println("herrreee",(pos.y -(radius/2)));
 }
 
 
