@@ -1,31 +1,30 @@
-class Guns{
-//PVector pos;
+class Guns
+{
 float theta;
-int elapse = 10;
+int elapse;
+
 
 
 
 Guns(){
-//pos = new PVector();
 theta = 0;
-
-
+elapse = 10;
 
 }
 
 void direct(){
   if (b.vel.y == (-2) /*|| b.vel.x == (-1)*/){
     elapse +=2;
-  }
+  }//end if
   if (keys['A'])
   {
     theta -= 0.08;
-  }
+  }//end if
   if (keys['D'])
   {
     theta += 0.1;
     println(elapse);
-  }
+  }//end if
   if (keys['W']  &&   frameCount % 5 == 0)
   {
     Bullets amo1 = new Bullets();
@@ -36,10 +35,7 @@ void direct(){
     amo1.forw.mult(amo1.speed);
     bullet.add(amo1);
     elapse  = 0 ;
-  }
-
-
-
+  }//end if
 
 }
 
@@ -57,14 +53,6 @@ void render(){
 popMatrix();
 
 
-
-
 }
-
-
-
-
-
-
 
 }
