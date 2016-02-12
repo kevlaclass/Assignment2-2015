@@ -1,10 +1,12 @@
-void mouseClicked()
+  void mouseClicked()
 {
   if ((mouseX > left) && (mouseX < left + bWidth) && (mouseY > top) && (mouseY < top + bHeight)) 
   {
     toggled = ! toggled;
   }  
 }
+int bounce =0;
+int lives = 5;
 Ball b;
 Ball b2;
 Ball b3;
@@ -133,6 +135,7 @@ void draw(){
   textSize(15);
   textAlign(LEFT);
     text("score: " + score, 25, 25);
+    text("lives: " + lives, 25, 50);
     noStroke();
     
     
@@ -200,6 +203,7 @@ void draw(){
   textSize(50);
   textAlign(CENTER);
   text("GAME OVER", width/ 2, height/ 2);
+  text("SCORE "+ score, width/2, (height/ 2)+ 100);
   
   }
 
@@ -215,6 +219,7 @@ public void Collisions()
     {
       if (go.loc.x <= 10 || go.loc.x >= width - 10 || go.loc.y <= 10 || go.loc.y >= height -10 ){
         bullet.remove(go);
+        g.time2 += 1;
       
       }
       for(int j = object.size() - 1 ; j >= 0   ;j --)
@@ -222,12 +227,15 @@ public void Collisions()
         Bubble other = object.get(j);
         if (other instanceof Bubble) // Check the type of a object
         {
+          
           //circle collisions
           if (go.loc.dist(other.pos) < 22)
           {
             score ++;
             if (time > 50){
             time -= 25;
+            g.time2 -= 50;
+            
             }
             object.remove(other);
             bullet.remove(go);
