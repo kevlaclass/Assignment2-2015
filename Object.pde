@@ -9,6 +9,7 @@ float halfw;
 float radius;
 float speedx;
 float speedy;
+PVector pos;
 
 
 Object(){
@@ -22,10 +23,26 @@ Object(){
   radius = (sqrt(pow(w, 2) + pow(w, 2)));
   speedx = random(-1, 1);
   speedy = random(-1, 1);
-
+pos = new PVector(0,0);
 
 }
 
+
+
+
+
+    
+
+
+void display(){
+  strokeWeight(0);
+  stroke(255);
+  //rect(x, y, w, w);
+  noFill();
+  //ellipse(x + halfw, y + halfw, radius, radius );
+  
+
+}
 void move(){
 
  x += speedx;
@@ -43,6 +60,15 @@ if ((y + halfw) - radius/2 < 0 || (y + halfw) + radius/2 > height){
     speedy *= (-1);
 }
 
+
+if ((y + halfw )+ radius/2 > bar.pos.y && (x + halfw) > bar.pos.x && (x + halfw) < bar.pos.x + bar.len.x){
+  speedy *= (-1);
+}
+pos.x= x + halfw;
+pos.y = y+halfw;
+}
+
+}
 
 if ((y + halfw )+ radius/2 > bar.pos.y && (x + halfw) > bar.pos.x && (x + halfw) < bar.pos.x + bar.len.x){
   speedy *= (-1);
